@@ -1,0 +1,1 @@
+drop table T02_Departamento;

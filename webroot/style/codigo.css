@@ -1,0 +1,34 @@
+td,th{
+    padding: 5px;
+    border: 2px solid black;
+}
+th{
+    font-weight: bold;
+}
+table{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ /*Tabla form*/
+#tableForm tr td{
+    border: none;
+}
+#tableForm>td{
+    padding: 4px;
+    border-collapse: collapse;
+    border: none;
+}
+#tableForm td>h3{
+    text-align: center;
+}
+#botones>button{
+    width: calc(80%/3);
+    padding-top: 5px;
+    padding-bottom: 4px;
+    display: inline-block;
+    font-size: 1.25em;
+}
+.error{
+    width: 500px;
+}
