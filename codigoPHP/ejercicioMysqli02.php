@@ -20,12 +20,19 @@
         * EjercicioMysqli 2
         * @author: Luis Pérez Astorga
         * @version: 1.1
-        * Fecha Modification: 15/11/2022
+        * @since 15/11/2022
         */
         // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
-        require_once '../config/confConexion.php';
+        require_once '../config/confConexion.php';        
+        /**
+         * imprimirTabla 
+         * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+         * @param  mysqli_result $resultado Resultado de la base de datos.
+         * @return void
+         */
         function imprimirTabla(mysqli_result $resultado){
             $aRespuestaQuery=$resultado->fetch_object();
+            // Mostramos el contenido de la base de datos con el 
             ?> 
             <table>
                 <?php

@@ -21,11 +21,17 @@ insert y una transacción, de tal forma que se añadan los tres registros o no s
                 * EjercicioPDO 5
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 15/11/2022
+                * @since 15/11/2022
                 */
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php';  
+                /**
+                * imprimirTabla 
+                * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+                * @param  PDOStatement $resultado Resultado de la base de datos.
+                * @return void
+                */ 
                 function imprimirTabla(PDOStatement $resultado){
                     $aRespuestaQuery=$resultado->fetch(PDO::FETCH_ASSOC);
                     ?> 
@@ -50,7 +56,6 @@ insert y una transacción, de tal forma que se añadan los tres registros o no s
                 try {
                     // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                     $odbDepartamentos=new PDO(HOSTPDO,USER,PASSWORD);
-                    //Establecemos los atributos para configurar los errores de PDO
                     $odbDepartamentos->beginTransaction();
                     $odbDepartamentos->exec("insert into T02_Departamento values(\"AAA\",\"aaaaaaaa\",".time().",4554.54,null)");
                     $odbDepartamentos->exec("insert into T02_Departamento values(\"BBB\",\"bbbbbbbb\",".time().",4534.3,null)");

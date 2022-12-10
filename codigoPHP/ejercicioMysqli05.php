@@ -21,11 +21,17 @@
                 * EjercicioPDO 5
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 15/11/2022
+                * @since 15/11/2022
                 */
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php';
+                /**
+                * imprimirTabla 
+                * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+                * @param  mysqli_result $resultado Resultado de la base de datos.
+                * @return void
+                */  
                 function imprimirTabla(mysqli_result $resultado){
                     $aRespuestaQuery=$resultado->fetch_row();
                     ?> 
@@ -50,7 +56,8 @@
                 try {
                     // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                     $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
-                    //Establecemos los atributos para configurar los errores de PDO
+                    // Si se le damos a enviar y descripción no esta vacia muestra los restados de buscar la descripcion en la base de datos.
+                    // Y si no se da a enviar y la descripción esta vacias se muestra todo el contenido de la base de datos.
                     $odbDepartamentos->autocommit(false);
                     $odbDepartamentos->query("insert into T02_Departamento values(\"MMM\",\"aaaaaaaa\",".time().",4554.54,null)");
                     $odbDepartamentos->query("insert into T02_Departamento values(\"NNN\",\"bbbbbbbb\",".time().",4534.3,null)");

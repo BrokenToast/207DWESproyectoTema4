@@ -20,11 +20,17 @@
                 * EjercicioPDO 3
                 * @author: Luis Pérez Astorga
                 * @version: 1.1
-                * Fecha Modification: 15/11/2022
+                * @since 15/11/2022
                 */
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php'; 
+                /**
+                * imprimirTabla 
+                * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+                * @param  PDOStatement $resultado Resultado de la base de datos.
+                * @return void
+                */ 
                 function imprimirTabla(PDOStatement $resultado){
                     $aRespuestaQuery=$resultado->fetchObject();
                     ?> 
