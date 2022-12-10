@@ -20,7 +20,7 @@
                 * EjercicioPDO 7
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 8/11/2022
+                * @since 8/11/2022
                 */
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';

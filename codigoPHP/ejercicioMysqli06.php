@@ -28,6 +28,12 @@
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php';
+                /**
+                * imprimirTabla 
+                * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+                * @param  mysqli_result $resultado Resultado de la base de datos.
+                * @return void
+                */  
                 function imprimirTabla(mysqli_result $resultado){
                     $aRespuestaQuery=$resultado->fetch_row();
                     ?> 
@@ -49,7 +55,8 @@
                         ?>
                     </table>
                 <?php }
-                $aDatosConsulta=[
+                // Declaración de una array con el contenido los datos que se van a añadir en la tabla.
+                $aDatosInsercion=[
                     ["XXX","dddddddd",4534.44],
                     ["YYY","eeeeeeee",4534.44],
                     ["QQQ","ffffffff",4534.44]
@@ -57,8 +64,8 @@
                 try {
                     // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                     $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
-                    //Establecemos los atributos para configurar los errores de PDO
-                    foreach( $aDatosConsulta as $fila){
+                    // Recorremos la Array aDatosInsercion y los insetamos en la tabla. 
+                    foreach( $aDatosInsercion as $fila){
                         $oQuery=$odbDepartamentos->prepare("insert into T02_Departamento values(?,?,".time().",?,null)");
                         $oQuery->bind_param("ssd",$fila[0],$fila[1],$fila[2]);
                         $oQuery->execute();

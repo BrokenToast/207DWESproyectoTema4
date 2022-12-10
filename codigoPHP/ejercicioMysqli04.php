@@ -19,10 +19,16 @@
         * EjercicioPDO 4
         * @author: Luis Pérez Astorga
         * @version: 1.0
-        * Fecha Modification: 8/11/2022
+        * @since 8/11/2022
         */
         // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
         require_once '../config/confConexion.php';
+        /**
+        * imprimirTabla 
+        * Nos permite imprimir una tabla con el contenido de la respuesta de la base de datos.
+        * @param  mysqli_result $resultado Resultado de la base de datos.
+        * @return void
+        */  
         function imprimirTabla(mysqli_result $resultado){
             $aRespuestaQuery=$resultado->fetch_object();
             ?> 
@@ -62,6 +68,8 @@
                         try {
                             // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                             $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
+                            // Si se le damos a enviar y descripción no esta vacia muestra los restados de buscar la descripcion en la base de datos.
+                            // Y si no se da a enviar y la descripción esta vacias se muestra todo el contenido de la base de datos.
                             if(isset($_REQUEST['enviar']) && !empty($_REQUEST['descripcion'])){
                                 $descriocionSinPeligro="%".preg_replace("/[-'\s\"]+/s","",$_REQUEST['descripcion'])."%";
 
@@ -70,6 +78,7 @@
                                 $oQuertPreparado->execute();
 
                                 $oResultadoQuery=$oQuertPreparado->get_result();
+                                // Si la respuesta tine mas de 1 una tupla, se muestra y si no muestra un mensaje.
                                 if($oResultadoQuery->num_rows>0){
                                     imprimirTabla($oResultadoQuery);
                                 }else{
