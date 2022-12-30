@@ -92,9 +92,10 @@
                     $aRespuesta['volumenNegocio']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['volumenNegocio']);
                     try {
                         // Instaciamos un objeto de la clase mysqli con la configuracion de la conexión(bien)
+                        $fechaHoraConexion = time();
                         $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
                         $aQuery=$odbDepartamentos->prepare("INSERT INTO T02_Departamento VALUES(?,?,?,?,null)");
-                        $aQuery->bind_param("ssis",$aRespuesta['abrebiatura'],$aRespuesta['descripcion'],(time()),$aRespuesta['volumenNegocio']);
+                        $aQuery->bind_param("ssis",$aRespuesta['abrebiatura'],$aRespuesta['descripcion'],$fechaHoraConexion,$aRespuesta['volumenNegocio']);
                         $aQuery->execute();
                         ?> <p>Se a insertado el departamento con  exito</p> <?php
                         imprimirTabla($odbDepartamentos->query('select * from T02_Departamento'));

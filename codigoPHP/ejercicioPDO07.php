@@ -25,7 +25,23 @@
                 // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php';
+
+                $odbDepartamentos;
+
+                $respuesta;
+
+                $queryAll=<<<SQL
+                    select * from T02_Departamento;
+                SQL;
+                try{
+                    $odbDepartamentos=new PDO(HOSTPDO,USER,PASSWORD);
+                    $respuesta=$odbDepartamentos->query($queryAll);
+                    $oTbDepartamentos = $respuesta->fetchObject();
+                }catch(PDOException $bug){
+                    print $bug->getMessage();
+                }
                 ?>
+
         </article>
     </section>
     <footer>
