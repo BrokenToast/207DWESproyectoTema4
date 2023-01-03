@@ -77,9 +77,6 @@ th{
 .PDO{
     max-width: 6vw;
 }
-tr:nth-of-type(8),tr:nth-of-type(9){
-    display: none;
-} 
 /*Tabla de recursos extras*/
 #extras{
     width: 40vw;

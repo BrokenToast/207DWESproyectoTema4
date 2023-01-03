@@ -85,11 +85,11 @@
                 if($entradaOK){
                     //Si el centinela es true para a procesar las respues.
                     // Almacena el campo abrebiatura del formulario en $aRespuesta
-                    $aRespuesta['abrebiatura']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['abrebiatura']);
+                    $aRespuesta['abrebiatura']=$_REQUEST['abrebiatura'];
                     // Almacena el campo descripcion del formulario en $aRespuesta
-                    $aRespuesta['descripcion']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['descripcion']);
+                    $aRespuesta['descripcion']=$_REQUEST['descripcion'];
                     // Almacena el campo volumenNegocio del formulario en $aRespuesta
-                    $aRespuesta['volumenNegocio']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['volumenNegocio']);
+                    $aRespuesta['volumenNegocio']=$_REQUEST['volumenNegocio'];
                     try {
                         // Instaciamos un objeto de la clase mysqli con la configuracion de la conexión(bien)
                         $fechaHoraConexion = time();
