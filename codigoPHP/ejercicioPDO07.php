@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="../../../webroot/style/reset.css">
     <link rel="stylesheet" href="../webroot/style/style.css">
     <link rel="stylesheet" href="../webroot/style/codigo.css">
-    <title>Ejercicio06</title>
+    <title>Ejercicio08</title>
 </head>
 <body>
     <header>
-        <h1>6. Pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
-            utilizando una consulta preparada.</h1>
+        <h1>7. Página web que toma datos (código y descripción) de un fichero xml y los añade a la tabla
+        Departamento de nuestra base de datos. (IMPORTAR). El fichero importado se encuentra en el
+        directorio .../tmp/ del servidor.</h1>
     </header>
     <section>
         <article>
             <?php
                 /**
-                * EjercicioPDO 6
+                * EjercicioPDO 7
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * @since 15/11/2022
+                * @since 3/1/2023
                 */
-                // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/IO/ioxml.php';
                 require_once '../core/DB/processDB.php';

@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="../../../webroot/style/reset.css">
     <link rel="stylesheet" href="../webroot/style/style.css">
     <link rel="stylesheet" href="../webroot/style/codigo.css">
-    <title>Ejercicio05</title>
+    <title>Ejercicio08</title>
 </head>
 <body>
     <header>
-        <h1>3. Formulario para añadir un departamento a la tabla Departamento con validación de entrada y control de errores.</h1>
+        <h1>Página web que toma datos (código y descripción) de la tabla Departamento y guarda en un
+        fichero departamento.xml. (COPIA DE SEGURIDAD / EXPORTAR). El fichero exportado se
+        encuentra en el directorio .../tmp/ del servidor.</h1>
     </header>
     <section>
         <article>
             <?php
                 /**
-                * EjercicioPDO 7
+                * EjercicioPDO 8
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * @since 8/11/2022
+                * @since 3/1/2023
                 */
-                // Llamamos a un archivo externo donde se alamcena la configuracionde la conexion
                 require_once '../config/confConexion.php';
                 require_once '../core/221024ValidacionFormularios.php';
                 require_once '../core/DB/processDB.php';
@@ -56,8 +57,7 @@
                     array_push($aXMLDocument[1],$aDepartamento);
 
                 }
-                IOXML::writeDocument("./departamentos.xml",$aXMLDocument); 
-            
+                IOXML::writeDocument("/tmp/departamentos.xml",$aXMLDocument); 
                 ?>
         </article>
     </section>

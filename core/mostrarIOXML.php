@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../webroot/style/reset.css">
     <link rel="stylesheet" href="../webroot/style/style.css">
-    <title>Validadción Formularios</title>
+    <title>IOXML</title>
 </head>
 <body>
     <header>
-        <h1>Validacion Formularios</h1>
+        <h1>IOXML</h1>
     </header>
     <section>
-        <article style="font-size: 0.8em;">
-            <code>
+        <article>
             <?php
-                show_source("./221024ValidacionFormularios.php");
+                show_source("./IO/ioxml.php");
             ?>
-            </code>
         </article>
     </section>
     <footer>

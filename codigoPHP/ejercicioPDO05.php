@@ -33,7 +33,7 @@ insert y una transacción, de tal forma que se añadan los tres registros o no s
                 * @return void
                 */ 
                 function imprimirTabla(PDOStatement $resultado){
-                    $aRespuestaQuery=$resultado->fetch(PDO::FETCH_ASSOC);
+                    $aRespuestaQuery=$resultado->fetchObject();
                     ?> 
                     <table>
                         <?php
@@ -48,11 +48,12 @@ insert y una transacción, de tal forma que se añadan los tres registros o no s
                                     ?> <td> <?php print $valorColumna; ?></td> <?php
                                 }
                                 ?> </tr> <?php
-                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetch(PDO::FETCH_ASSOC);
+                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetchObject();
                             } 
                         ?>
                     </table>
-                <?php }             
+                <?php
+                }               
                 try {
                     // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                     $odbDepartamentos=new PDO(HOSTPDO,USER,PASSWORD);
