@@ -50,6 +50,14 @@
                         <th>Libreria de validacion</th>
                         <td colspan="2"><a href="./core/mostrarValidacion.php"><img src="./doc/hoja_Papel.png" alt="Archivos"></a></td>
                     </tr>
+                    <tr>
+                        <th>Libreria de IOXML</th>
+                        <td colspan="2"><a href="./core/mostrarIOXML.php"><img src="./doc/hoja_Papel.png" alt="Archivos"></a></td>
+                    </tr>
+                    <tr>
+                        <th>Libreria de DB</th>
+                        <td colspan="2"><a href="./core/mostrarDB.php"><img src="./doc/hoja_Papel.png" alt="Archivos"></a></td>
+                    </tr>
                 </tbody>
             </table>
             <h2>Ejericicios Tema 4</h2>
@@ -111,8 +119,8 @@
                         directorio .../tmp/ del servidor.</td>
                     <td class="PDO"><a href="./codigoPHP/ejercicioPDO07.php"><img src="./doc/play.png" alt="Ejecutar"></a></td>
                     <td class="PDO"><a href="./mostrarcodigo/muestraEjercicioPDO07.php"><img src="./doc/mostrar_codigo.png" alt="Mostrar"></a></td>
-                    <td class="Mysqli"><a href="./codigoPHP/ejercicioMysqli07.php"><img src="./doc/play.png" alt="Ejecutar"></a></td>
-                    <td class="Mysqli"><a href="./mostrarcodigo/muestraEjercicioMysqli07.php"><img src="./doc/mostrar_codigo.png" alt="Mostrar"></a></td>
+                    <td class="Mysqli"><img src="./doc/No_Disponible.png" alt="Ejecutar"></td>
+                    <td class="Mysqli"><img src="./doc/No_Disponible.png" alt="Mostrar"></td>
                 </tr>
                 <tr>
                     <td>8. Página web que toma datos (código y descripción) de la tabla Departamento y guarda en un
@@ -124,8 +132,8 @@
                         el equipo cliente.</td>
                     <td class="PDO"><a href="./codigoPHP/ejercicioPDO08.php"><img src="./doc/play.png" alt="Ejecutar"></a></td>
                     <td class="PDO"><a href="./mostrarcodigo/muestraEjercicioPDO08.php"><img src="./doc/mostrar_codigo.png" alt="Mostrar"></a></td>
-                    <td class="Mysqli"><a href="./codigoPHP/ejercicioMysqli08.php"><img src="./doc/play.png" alt="Ejecutar"></a></td>
-                    <td class="Mysqli"><a href="./mostrarcodigo/muestraEjercicioMysqli08.php"><img src="./doc/mostrar_codigo.png" alt="Mostrar"></a></td>
+                    <td class="Mysqli"><img src="./doc/No_Disponible.png" alt="Ejecutar"></td>
+                    <td class="Mysqli"><img src="./doc/No_Disponible.png" alt="Mostrar"></td>
                 </tr>
             </table>
         </article>

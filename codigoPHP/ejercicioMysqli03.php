@@ -85,16 +85,17 @@
                 if($entradaOK){
                     //Si el centinela es true para a procesar las respues.
                     // Almacena el campo abrebiatura del formulario en $aRespuesta
-                    $aRespuesta['abrebiatura']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['abrebiatura']);
+                    $aRespuesta['abrebiatura']=$_REQUEST['abrebiatura'];
                     // Almacena el campo descripcion del formulario en $aRespuesta
-                    $aRespuesta['descripcion']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['descripcion']);
+                    $aRespuesta['descripcion']=$_REQUEST['descripcion'];
                     // Almacena el campo volumenNegocio del formulario en $aRespuesta
-                    $aRespuesta['volumenNegocio']=preg_replace("/[-'\s\"]+/s","",$_REQUEST['volumenNegocio']);
+                    $aRespuesta['volumenNegocio']=$_REQUEST['volumenNegocio'];
                     try {
                         // Instaciamos un objeto de la clase mysqli con la configuracion de la conexión(bien)
+                        $fechaHoraConexion = time();
                         $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
                         $aQuery=$odbDepartamentos->prepare("INSERT INTO T02_Departamento VALUES(?,?,?,?,null)");
-                        $aQuery->bind_param("ssis",$aRespuesta['abrebiatura'],$aRespuesta['descripcion'],(time()),$aRespuesta['volumenNegocio']);
+                        $aQuery->bind_param("ssis",$aRespuesta['abrebiatura'],$aRespuesta['descripcion'],$fechaHoraConexion,$aRespuesta['volumenNegocio']);
                         $aQuery->execute();
                         ?> <p>Se a insertado el departamento con  exito</p> <?php
                         imprimirTabla($odbDepartamentos->query('select * from T02_Departamento'));

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Departamentos id="root">
+    <Departamento T02_CodDepartamento="DLC">
+        <T02_DescDepartamento>Departamento de Lengua Clasica</T02_DescDepartamento>
+        <T02_FechaDeCreacionDepartamento>1672392806</T02_FechaDeCreacionDepartamento>
+        <T02_VolumenDeNegocio>800</T02_VolumenDeNegocio>
+    </Departamento>
+    <Departamento T02_CodDepartamento="DTC">
+        <T02_DescDepartamento>Departamento de las tecnologicas de comunicación</T02_DescDepartamento>
+        <T02_FechaDeCreacionDepartamento>1672392806</T02_FechaDeCreacionDepartamento>
+        <T02_VolumenDeNegocio>600</T02_VolumenDeNegocio>
+    </Departamento>
+</Departamentos>

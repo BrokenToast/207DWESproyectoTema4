@@ -58,8 +58,6 @@
                 // Variable centinela 
                 ?> 
                 <form action="ejercicioPDO04.php" method="post">
-                    <!--Si hay un error en aErrores del campo pes se muestra un error en pantalla y si esta mal el alguno de los compos
-                    menos esta mal, guarda el dato introducido-->
                     <label for="descripcion">Introduce tu descripcion</label>
                     <input type="text" name="descripcion" id="descripcion" value="<?php (isset($_REQUEST['enviar']))?print $_REQUEST['descripcion']:'';?>">
                     <br><br>
@@ -68,11 +66,15 @@
                         try {
                             // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                             $odbDepartamentos=new PDO(HOSTPDO,USER,PASSWORD);
+                            $ok=false;
+                            if(isset($_REQUEST['enviar']) && empty(validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion']))){
+                                $ok=true;
+                            }
                             // Si se le damos a enviar y descripción no esta vacia muestra los restados de buscar la descripcion en la base de datos.
                             // Y si no se da a enviar y la descripción esta vacias se muestra todo el contenido de la base de datos.
-                            if(isset($_REQUEST['enviar']) && !empty($_REQUEST['descripcion'])){
+                            if($ok && !empty($_REQUEST['descripcion'])){
                                 $oRespuestaQuery=$odbDepartamentos->prepare("select * from T02_Departamento where T02_DescDepartamento like ?");
-                                $oRespuestaQuery->bindValue(1,"%".preg_replace("/[-'\s\"]+/s","",$_REQUEST['descripcion'])."%");
+                                $oRespuestaQuery->bindValue(1,"%".$_REQUEST['descripcion']."%");
                                 $oRespuestaQuery->execute();
                                 // Si la respuesta tine mas de 1 una tupla, se muestra y si no muestra un mensaje.
                                 if($oRespuestaQuery->rowCount()>0){

@@ -35,7 +35,7 @@
                 * @return void
                 */  
                 function imprimirTabla(mysqli_result $resultado){
-                    $aRespuestaQuery=$resultado->fetch_row();
+                    $aRespuestaQuery=$resultado->fetch_object();
                     ?> 
                     <table>
                         <?php
@@ -50,7 +50,7 @@
                                     ?> <td> <?php print $valorColumna; ?></td> <?php
                                 }
                                 ?> </tr> <?php
-                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetch_row();
+                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetch_object();
                             } 
                         ?>
                     </table>

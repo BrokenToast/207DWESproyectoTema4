@@ -48,7 +48,7 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
      * @param string $cadena Cadena que se va a comprobar.
      * @param int $maxTamanio Tamaño máximo de la cádena.
      * @param int $minTamanio Tamaño mínimo de la cadena.
-     * @param boolean $obligatorio Valor booleano indicado mediante 1, si es obligatorio o 0 si no lo es.
+     * @param bool $obligatorio Valor booleano indicado mediante 1, si es obligatorio o 0 si no lo es.
      * @return null|string Devuelve null si es correcto o un mensaje de error en caso de que lo haya.
      */
     public static function comprobarAlfabetico(string $cadena, $maxTamanio = 1000, $minTamanio = 1, $obligatorio = 0) {  //AÑADIDOS VALORES POR DEFECTO Y MEJORADA LA RESPUESTA

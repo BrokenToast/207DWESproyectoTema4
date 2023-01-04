@@ -33,7 +33,7 @@
                 * @return void
                 */ 
                 function imprimirTabla(PDOStatement $resultado){
-                    $aRespuestaQuery=$resultado->fetch(PDO::FETCH_ASSOC);
+                    $aRespuestaQuery=$resultado->fetchObject();
                     ?> 
                     <table>
                         <?php
@@ -48,11 +48,12 @@
                                     ?> <td> <?php print $valorColumna; ?></td> <?php
                                 }
                                 ?> </tr> <?php
-                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetch(PDO::FETCH_ASSOC);
+                                $aRespuestaQuery=$aRespuestaQuery=$resultado->fetchObject();
                             } 
                         ?>
                     </table>
-                <?php }  
+                <?php
+                }    
                 // Declaración de una array con el contenido los datos que se van a añadir en la tabla.
                 $aDatosConsulta=[
                     ["DDD","dddddddd",4534.44],

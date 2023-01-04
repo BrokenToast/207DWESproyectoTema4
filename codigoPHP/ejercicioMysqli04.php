@@ -68,9 +68,13 @@
                         try {
                             // Instaciamos un objeto de la clase PDO con la configuracion de la conexión(bien)
                             $odbDepartamentos=new mysqli(HOST,USER,PASSWORD,DATABASE,PORT);
+                            $ok=false;
+                            if(isset($_REQUEST['enviar']) && empty(validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion']))){
+                                $ok=true;
+                            }
                             // Si se le damos a enviar y descripción no esta vacia muestra los restados de buscar la descripcion en la base de datos.
                             // Y si no se da a enviar y la descripción esta vacias se muestra todo el contenido de la base de datos.
-                            if(isset($_REQUEST['enviar']) && !empty($_REQUEST['descripcion'])){
+                            if($ok && !empty($_REQUEST['descripcion'])){
                                 $descriocionSinPeligro="%".preg_replace("/[-'\s\"]+/s","",$_REQUEST['descripcion'])."%";
 
                                 $oQuertPreparado=$odbDepartamentos->prepare("select * from T02_Departamento where T02_DescDepartamento like ?");

@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../webroot/style/reset.css">
     <link rel="stylesheet" href="../webroot/style/style.css">
-    <title>Validadción Formularios</title>
+    <title>DB</title>
 </head>
 <body>
     <header>
-        <h1>Validacion Formularios</h1>
+        <h1>DB</h1>
     </header>
     <section>
-        <article style="font-size: 0.8em;">
+        <article>
             <code>
             <?php
-                show_source("./221024ValidacionFormularios.php");
+                show_source("./DB/processDB.php");
             ?>
             </code>
         </article>
